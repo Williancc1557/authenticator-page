@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@400;900&display=swap');
+
+main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--fourth-color);
+}
+
+main .sections {
+  width: 98%;
+  height: 98vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 0px 15px black;
+  border-radius: 20px;
+}
+
+.left-page {
+  width: 50%;
+}
+
+
+/* Form section */
+
+.login-container {
+  display: flex;
+  height: 98vh;
+  background-color: var(--third-color);
+  color: white;
+  width: 50%;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.login-container h1 {
+  width: 70%;
+  padding: 20px 0 20px 0;
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'Martel Sans', sans-serif;
+}
+
+.happy-emoji {
+  animation: spin 1s infinite
+}
+
+@keyframes spin {
+  50% {
+    transform: rotate(-25deg);
+  }
+
+  90% {
+    transform: rotate(25deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+form {
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+form p {
+  font-size: 1.8rem;
+  font-family: 'Martel Sans', sans-serif;
+}
+
+form input {
+  width: 40%;
+  padding: 5px 0 5px 5px;
+  height: 3vh;
+  border-radius: 10px;
+  font-size: 20px;
+  transition: 0.2s;
+}
+
+form input:focus {
+  padding: 10px 0 10px 5px;
+  outline: none;
+}
+
+form .submit {
+  cursor: pointer;
+  background-color: blue;
+  border: none;
+  color: white;
+  width: 35%;
+  height: 5.5vh;
+  border-radius: 10px;
+  font-size: 1.3rem;
+}
+
+form .submit:hover {
+  background-color: rgb(54, 54, 253);
+}
+
+
+@media (max-width: 950px) {
+  .login-container h1 {
+    width: 25rem;
+  }
+
+  .left-page {
+    display: none;
+  }
+
+  .login-container {
+    width: 90%;
+    height: 98vh;
+  }
+
+  form input {
+    width: 50%;
+  }
+}
