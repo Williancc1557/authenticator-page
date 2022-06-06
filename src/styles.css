@@ -9,3 +9,6 @@
   --third-color: #5B4B8A;
   --fourth-color: #7858A6;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignInComponent } from './page/auth/sign-in/sign-in.component';
 import { TitleAnimatedComponent } from './components/auth/title/title-animated.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from "@angular/material/input"
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { TitleAnimatedComponent } from './components/auth/title/title-animated.c
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent],

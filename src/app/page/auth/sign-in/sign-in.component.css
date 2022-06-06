@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@400;900&display=swap');
 
+body,
+html {
+  overflow-x: hidden;
+}
+
 main {
+  overflow-x: hidden;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -44,12 +50,14 @@ main .sections {
   width: 70%;
   padding: 20px 0 20px 0;
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.2rem;
+  margin-top: 4%;
+  margin-bottom: 3%;
   font-family: 'Martel Sans', sans-serif;
 }
 
 .happy-emoji {
-  animation: spin 1s infinite
+  animation: spin 1s infinite;
 }
 
 @keyframes spin {
@@ -67,13 +75,12 @@ main .sections {
 }
 
 form {
-  height: 60vh;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 30px;
+  margin-bottom: 2rem;
 }
 
 form p {
@@ -83,7 +90,7 @@ form p {
 
 form input {
   width: 40%;
-  padding: 5px 0 5px 5px;
+  padding: 7.5px 0 7.5px 5px;
   height: 3vh;
   border-radius: 10px;
   font-size: 20px;
@@ -101,7 +108,7 @@ form .submit {
   border: none;
   color: white;
   width: 35%;
-  height: 5.5vh;
+  height: 6vh;
   border-radius: 10px;
   font-size: 1.3rem;
 }
@@ -113,7 +120,8 @@ form .submit:hover {
 
 @media (max-width: 950px) {
   .login-container h1 {
-    width: 25rem;
+    width: 70%;
+    font-size: 2rem;
   }
 
   .left-page {
