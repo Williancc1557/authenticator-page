@@ -1,0 +1,18 @@
+<main>
+    <div class="sections">
+        <app-title-animated class="left-page"></app-title-animated>
+
+        <section class="login-container">
+            <h1>
+                Realize o seu cadastro <div class="happy-emoji">👋</div>
+            </h1>
+            <form>
+                <p>Digite o seu email:</p>
+                <input placeholder="email" type="email" name="email" maxlength="320" [(ngModel)]="user.email" />
+                <p>Digite a sua senha:</p>
+                <input placeholder="senha" type="password" name="password" maxlength="30" [(ngModel)]="user.password" />
+                <button type="submit" class="submit" (click)="submit()">Cadastrar</button>
+            </form>
+        </section>
+    </div>
+</main>

@@ -3,6 +3,26 @@
   padding: 0;
 }
 
+/* snack bar config */
+.snack-bar-sucess {
+  background-color: #6cc070;
+}
+
+.snack-bar-error {
+  background-color: #ff3333;
+}
+
+.snack-bar-error .mat-button-wrapper,
+.snack-bar-sucess .mat-button-wrapper {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.snack-bar-sucess .mat-simple-snack-bar-content {
+  font-size: 1.1rem;
+}
+
+/* etc */
 :root {
   --primary-color: #371B58;
   --second-color: #4C3575;
@@ -10,5 +30,12 @@
   --fourth-color: #7858A6;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

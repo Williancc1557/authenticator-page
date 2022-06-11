@@ -4,11 +4,11 @@ import { ApiService } from 'src/app/service/api.service';
 import { UtilsService } from 'src/app/service/utils.service';
 
 @Component({
-  selector: 'app-sign-in',
-  templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.css']
+  selector: 'app-sign-up',
+  templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.css']
 })
-export class SignInComponent implements OnInit {
+export class SignUpComponent implements OnInit {
 
   user: UserParamsDto = {
     email: "",
@@ -37,9 +37,9 @@ export class SignInComponent implements OnInit {
       return this.utilsService.showSnackBarError("Preencha todos os campos!")
     }
 
-    return this.apiService.signIn(this.user).subscribe({
+    return this.apiService.signUp(this.user).subscribe({
       next: (res) => {
-        localStorage.setItem("token_auth", res.body.jwt.token)
+        localStorage.setItem("token_auth", res.body.token)
         return this.utilsService.showSnackBarSucess("Logado com sucesso!")
       },
       error: () => {

@@ -8,19 +8,25 @@ import { TitleAnimatedComponent } from './components/auth/title/title-animated.c
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from "@angular/material/input"
+import { FormsModule } from '@angular/forms';
+import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { SignUpComponent } from './page/auth/sign-up/sign-up.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
-    TitleAnimatedComponent
+    TitleAnimatedComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

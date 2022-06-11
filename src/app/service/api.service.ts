@@ -24,10 +24,10 @@ export class ApiService {
   }
 
   signIn(user: UserParamsDto): Observable<SignInDto> {
-    return this.http.post<SignInDto>(this.baseUrl + "/sign-in", { user })
+    return this.http.post<SignInDto>(this.baseUrl + "/sign-in", user)
   }
 
   getUser(email: string): Observable<GetUserDto> {
-    return this.http.get<GetUserDto>(this.baseUrl + "/get/" + email)
+    return this.http.get<GetUserDto>(this.baseUrl + "/get/user/" + email)
   }
 }

@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@400;900&display=swap');
+
+body,
+html {
+    overflow-x: hidden;
+}
+
+main {
+    overflow-x: hidden;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--fourth-color);
+}
+
+main .sections {
+    width: 98%;
+    height: 98vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 0px 15px black;
+    border-radius: 20px;
+}
+
+.left-page {
+    width: 50%;
+}
+
+
+/* Form section */
+
+.login-container {
+    display: flex;
+    height: 98vh;
+    background-color: var(--third-color);
+    color: white;
+    width: 50%;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Roboto", sans-serif;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.login-container h1 {
+    font-weight: 700;
+    width: 70%;
+    padding: 20px 0 20px 0;
+    text-align: center;
+    font-size: 2.2rem;
+    margin-top: 4%;
+    margin-bottom: 3%;
+    font-family: 'Martel Sans', sans-serif;
+}
+
+.happy-emoji {
+    margin-top: 10px;
+    animation: spin 2s infinite;
+}
+
+@keyframes spin {
+
+    0%,
+    30% {
+        transform: rotate(0deg);
+    }
+
+    40% {
+        transform: rotate(-15deg);
+    }
+
+    60% {
+        transform: rotate(15deg);
+    }
+
+    80% {
+        transform: rotate(-15deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 2rem;
+}
+
+form p {
+    font-size: 1.8rem;
+    font-family: 'Martel Sans', sans-serif;
+}
+
+form input {
+    width: 40%;
+    padding: 7.5px 0 7.5px 5px;
+    height: 3vh;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    transition: 0.2s;
+}
+
+form input:focus {
+    padding: 10px 0 10px 5px;
+    outline: none;
+}
+
+form .submit {
+    cursor: pointer;
+    background-color: blue;
+    border: none;
+    color: white;
+    width: 35%;
+    height: 6vh;
+    border-radius: 10px;
+    font-size: 1.3rem;
+}
+
+form .submit:hover {
+    background-color: rgb(54, 54, 253);
+}
+
+
+@media (max-width: 950px) {
+    .login-container h1 {
+        width: 70%;
+        font-size: 2rem;
+    }
+
+    .left-page {
+        display: none;
+    }
+
+    .login-container {
+        width: 90%;
+        height: 98vh;
+    }
+
+    form input {
+        width: 50%;
+    }
+}
+
+@media (max-width: 580px) {
+    form input {
+        font-size: 0.9rem;
+    }
+}

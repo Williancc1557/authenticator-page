@@ -3,16 +3,17 @@
     <app-title-animated class="left-page"></app-title-animated>
 
     <section class="login-container">
-      <h1>Realize o seu login nesse maravilhoso site <div class="happy-emoji">😀</div>
+      <h1>
+        Realize o seu login <div class="happy-emoji">👋</div>
       </h1>
       <form>
         <p>Digite o seu email:</p>
-        <input matInput placeholder="email" type="email" />
+        <input placeholder="email" type="email" name="email" maxlength="320" [(ngModel)]="user.email" />
         <p>Digite a sua senha:</p>
-        <input matInput placeholder="senha" type="password" />
-        <button type="submit" class="submit">Entrar</button>
+        <input placeholder="senha" type="password" name="password" maxlength="30" [(ngModel)]="user.password" />
+        <button type="submit" class="submit" (click)="submit()">Entrar</button>
       </form>
-      <p>Não possui conta? <a href="">Clique aqui</a></p>
+      <p>Não possui conta? <a routerLink="/cadastro">Clique aqui</a></p>
     </section>
   </div>
 </main>
