@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { UserParamsDto } from 'src/app/models/user.dto';
 import { ApiService } from 'src/app/service/api.service';
 import { UtilsService } from 'src/app/service/utils.service';
@@ -9,20 +11,30 @@ import { UtilsService } from 'src/app/service/utils.service';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-
   user: UserParamsDto = {
     email: "",
     password: ""
   }
+  loading: boolean = false
 
   public constructor(
-    public readonly apiService: ApiService,
-    public readonly utilsService: UtilsService
+    private readonly apiService: ApiService,
+    private readonly utilsService: UtilsService,
+    private readonly router: Router
+
   ) { }
 
 
   ngOnInit(): void {
+    const token = localStorage.getItem("token_auth")
 
+    if (token) {
+      this.apiService.isValidToken(token).subscribe({
+        next: () => {
+          this.router.navigate([""])
+        },
+      })
+    }
   }
 
   isNullInput(): boolean {
@@ -32,18 +44,38 @@ export class SignUpComponent implements OnInit {
     return false
   }
 
+
   submit() {
     if (this.isNullInput()) {
       return this.utilsService.showSnackBarError("Preencha todos os campos!")
     }
 
+    this.loading = true
+
     return this.apiService.signUp(this.user).subscribe({
       next: (res) => {
-        localStorage.setItem("token_auth", res.body.token)
-        return this.utilsService.showSnackBarSucess("Logado com sucesso!")
+        console.log(res);
+
+        console.log(res.body.jwt.token);
+
+        localStorage.setItem("token_auth", res.body.jwt.token)
+
+        this.loading = false
+
+        this.utilsService.showSnackBarSucess("Cadastrado com sucesso!")
+
+        this.router.navigate([""])
       },
-      error: () => {
-        return this.utilsService.showSnackBarError("Email ou senha invalido(s)!")
+      error: (err) => {
+        this.loading = false
+
+        if (err.error.statusCode == 400) {
+          return this.utilsService.showSnackBarError("Email ou senha invalido(s)!")
+        } else if (err.error.statusCode == 409) {
+          return this.utilsService.showSnackBarError("Esse email já foi cadastrado!")
+        } else {
+          return this.utilsService.showSnackBarError("Ocorreu algum erro, tente novamente mais tarde!")
+        }
       }
     })
   }

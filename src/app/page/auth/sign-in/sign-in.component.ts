@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserParamsDto } from 'src/app/models/user.dto';
 import { ApiService } from 'src/app/service/api.service';
 import { UtilsService } from 'src/app/service/utils.service';
@@ -15,14 +16,25 @@ export class SignInComponent implements OnInit {
     password: ""
   }
 
+  loading: boolean = false
+
   public constructor(
-    public readonly apiService: ApiService,
-    public readonly utilsService: UtilsService
+    private readonly apiService: ApiService,
+    private readonly utilsService: UtilsService,
+    private readonly router: Router
   ) { }
 
 
   ngOnInit(): void {
+    const token = localStorage.getItem("token_auth")
 
+    if (token) {
+      this.apiService.isValidToken(token).subscribe({
+        next: () => {
+          this.router.navigate([""])
+        },
+      })
+    }
   }
 
   isNullInput(): boolean {
@@ -37,12 +49,20 @@ export class SignInComponent implements OnInit {
       return this.utilsService.showSnackBarError("Preencha todos os campos!")
     }
 
+    this.loading = true
+
     return this.apiService.signIn(this.user).subscribe({
       next: (res) => {
         localStorage.setItem("token_auth", res.body.jwt.token)
-        return this.utilsService.showSnackBarSucess("Logado com sucesso!")
+
+        this.loading = false
+
+        this.utilsService.showSnackBarSucess("Logado com sucesso!")
+        this.router.navigate([""])
       },
       error: () => {
+        this.loading = false
+
         return this.utilsService.showSnackBarError("Email ou senha invalido(s)!")
       }
     })

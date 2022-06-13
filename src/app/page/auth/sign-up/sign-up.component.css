@@ -13,7 +13,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--fourth-color);
+    background-color: white;
 }
 
 main .sections {
@@ -26,17 +26,12 @@ main .sections {
     border-radius: 20px;
 }
 
-.left-page {
-    width: 50%;
-}
-
-
 /* Form section */
 
 .login-container {
     display: flex;
     height: 98vh;
-    background-color: var(--third-color);
+    background-color: var(--second-color);
     color: white;
     width: 50%;
     align-items: center;
@@ -91,12 +86,15 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
     margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
 form p {
-    font-size: 1.8rem;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    width: 40%;
+    font-size: 1.3rem;
     font-family: 'Martel Sans', sans-serif;
 }
 
@@ -115,6 +113,7 @@ form input:focus {
 }
 
 form .submit {
+    margin-top: 20px;
     cursor: pointer;
     background-color: blue;
     border: none;
@@ -131,11 +130,6 @@ form .submit:hover {
 
 
 @media (max-width: 950px) {
-    .login-container h1 {
-        width: 70%;
-        font-size: 2rem;
-    }
-
     .left-page {
         display: none;
     }
@@ -143,6 +137,13 @@ form .submit:hover {
     .login-container {
         width: 90%;
         height: 98vh;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+
+    .login-container h1 {
+        width: 70%;
+        font-size: 2rem;
     }
 
     form input {

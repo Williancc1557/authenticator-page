@@ -24,10 +24,9 @@
 
 /* etc */
 :root {
-  --primary-color: #371B58;
-  --second-color: #4C3575;
-  --third-color: #5B4B8A;
-  --fourth-color: #7858A6;
+  --primary-color: #142c8a;
+  --second-color: #1d6cbf;
+  --third-color: #f2df84;
 }
 
 html,
@@ -38,4 +37,14 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+.loader {
+  position: absolute;
+  width: 100%;
+}
+
+.left-page {
+  width: 50%;
 }

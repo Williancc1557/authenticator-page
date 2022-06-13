@@ -10,14 +10,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from "@angular/material/input"
 import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from "@angular/material/snack-bar";
-import { SignUpComponent } from './page/auth/sign-up/sign-up.component'
+import { SignUpComponent } from './page/auth/sign-up/sign-up.component';
+import { LoadComponent } from './components/utils/load/load.component';
+import { HomeComponent } from './page/home/home.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
     TitleAnimatedComponent,
-    SignUpComponent
+    SignUpComponent,
+    LoadComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
