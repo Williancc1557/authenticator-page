@@ -12,7 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { SignUpComponent } from './page/auth/sign-up/sign-up.component';
 import { LoadComponent } from './components/utils/load/load.component';
-import { HomeComponent } from './page/home/home.component'
+import { HomeComponent } from './page/home/home.component';
+import { CheckEmailComponent } from './page/auth/check-email/check-email.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HomeComponent } from './page/home/home.component'
     TitleAnimatedComponent,
     SignUpComponent,
     LoadComponent,
-    HomeComponent
+    HomeComponent,
+    CheckEmailComponent
   ],
   imports: [
     BrowserModule,

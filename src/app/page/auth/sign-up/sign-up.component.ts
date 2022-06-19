@@ -47,20 +47,18 @@ export class SignUpComponent implements OnInit {
 
   submit() {
     if (this.isNullInput()) {
-      return this.utilsService.showSnackBarError("Preencha todos os campos!")
+      return this.utilsService.showSnackBarError({
+        type: 'inputUndefined'
+      })
     }
 
     this.loading = true
 
     return this.apiService.signUp(this.user).subscribe({
       next: (res) => {
-        console.log(res);
-
-        console.log(res.body.jwt.token);
+        this.loading = false
 
         localStorage.setItem("token_auth", res.body.jwt.token)
-
-        this.loading = false
 
         this.utilsService.showSnackBarSucess("Cadastrado com sucesso!")
 
@@ -70,11 +68,17 @@ export class SignUpComponent implements OnInit {
         this.loading = false
 
         if (err.error.statusCode == 400) {
-          return this.utilsService.showSnackBarError("Email ou senha invalido(s)!")
+          return this.utilsService.showSnackBarError({
+            msg: "Email ou senha invalido(s)!"
+          })
         } else if (err.error.statusCode == 409) {
-          return this.utilsService.showSnackBarError("Esse email já foi cadastrado!")
+          return this.utilsService.showSnackBarError({
+            msg: "Esse email já foi cadastrado!"
+          })
         } else {
-          return this.utilsService.showSnackBarError("Ocorreu algum erro, tente novamente mais tarde!")
+          return this.utilsService.showSnackBarError({
+            type: 'internalError'
+          })
         }
       }
     })

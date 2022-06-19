@@ -8,6 +8,17 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { isVerifiedDto } from '../models/is-verified.dto';
 
+
+interface CheckEmailInput {
+  email: string,
+  confirmationToken: number
+}
+
+interface CheckEmailOutput {
+  statusCode: number,
+  body: Array<void>
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -39,5 +50,9 @@ export class ApiService {
 
   isVerified(email: string): Observable<isVerifiedDto> {
     return this.http.get<isVerifiedDto>(this.baseUrl + "/is-verified/" + email)
+  }
+
+  checkEmail(body: CheckEmailInput) {
+    return this.http.patch<CheckEmailOutput>(this.baseUrl + "/check-email", body)
   }
 }

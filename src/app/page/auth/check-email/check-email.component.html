@@ -1,0 +1,14 @@
+<main>
+    <div class="container ">
+        <p>Enviamos um código para o seu email <b>{{email}}</b></p>
+        <form>
+            <img src="" alt="">
+            <label for="key">Digite o código de 4 dígitos enviado no seu email abaixo</label>
+            <input type="password" name="key" placeholder="código" [(ngModel)]="key" maxlength="4"
+                (ngModelChange)="changeInput()">
+            <button type="submit" (click)="checkEmail(key)">Verificar</button>
+        </form>
+    </div>
+
+    <app-load class="loader" *ngIf="loading"></app-load>
+</main>

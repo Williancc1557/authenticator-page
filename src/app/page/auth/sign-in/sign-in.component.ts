@@ -46,7 +46,9 @@ export class SignInComponent implements OnInit {
 
   submit() {
     if (this.isNullInput()) {
-      return this.utilsService.showSnackBarError("Preencha todos os campos!")
+      return this.utilsService.showSnackBarError({
+        type: 'inputUndefined'
+      })
     }
 
     this.loading = true
@@ -60,10 +62,18 @@ export class SignInComponent implements OnInit {
         this.utilsService.showSnackBarSucess("Logado com sucesso!")
         this.router.navigate([""])
       },
-      error: () => {
+      error: (err) => {
         this.loading = false
 
-        return this.utilsService.showSnackBarError("Email ou senha invalido(s)!")
+        if (err.error.statusCode == 403) {
+          return this.utilsService.showSnackBarError({
+            msg: "Email ou senha invalido(s)!"
+          })
+        } else {
+          return this.utilsService.showSnackBarError({
+            type: 'internalError'
+          })
+        }
       }
     })
   }

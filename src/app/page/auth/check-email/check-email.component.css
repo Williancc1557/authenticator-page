@@ -1,0 +1,64 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: var(--primary-color);
+    font-family: "Roboto", sans-serif;
+    color: white;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+
+.container p {
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-align: center;
+    height: max-content;
+    margin: 40px 10px 10px 0;
+}
+
+.container form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.container form label {
+    margin: 13px;
+    padding-bottom: 15px;
+}
+
+.container form input {
+    width: 30%;
+    height: 8%;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    outline: none;
+    padding: 5px;
+    transition: 0.2s;
+    border: none;
+}
+
+.container form input:focus {
+    height: 9%;
+}
+
+.container form button {
+    margin-top: 30px;
+    border: none;
+    cursor: pointer;
+    padding: 15px 60px 15px 60px;
+    border-radius: 10px;
+    background-color: var(--second-color);
+    color: white;
+}
