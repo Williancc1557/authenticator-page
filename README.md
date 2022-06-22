@@ -2,9 +2,9 @@
 <tr>
 <td align="center" width="9999">
 
-![](https://github.com/Williancc1557/authenticator-page/blob/master/assets/apresentation.gif)
-
 # Sistema de authenticação
+
+![](https://github.com/Williancc1557/authenticator-page/blob/master/assets/apresentation.gif)
 
 *Authenticator systems for your application*
 
