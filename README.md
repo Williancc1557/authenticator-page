@@ -1,30 +1,36 @@
-# LoginPage
+<table align="center">
+<tr>
+<td align="center" width="9999">
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
+![]()
 
-## Development server
+# Sistema de authenticação
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+*Authenticator systems for your application*
 
-## Code scaffolding
+</td>
+</tr>
+</table>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+***Características:***
+```json
+{
+    framework: "angular",
+    backend: "nestjs",
+    author: "Willian cavalcanti Coelho",
+    about: "Website com o objetivo de associar com um backend de authenticação."
+}
+```
 
-## Build
+***Etc:***
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Para que fosse possivel um sistema de authenticação é necessário um **backend**, você pode acessar o backend desse projeto no seguinte repositório: https://github.com/Williancc1557/authenticator-api
 
-## Running unit tests
+Para a construção desse site, utilizei meus simples conhecimentos do framework angular.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Primeiros passos
 
-## Running end-to-end tests
+Primeiramente, achei mais confortável criar o backend cujo o link está acima, iniciei criando as rotas necessária para que o frontend (ou seja, essa aplicação) iria utilizar.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Comecei assim criando a página de login em que o resultado foi melhor do que eu esperava:
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
-
-https://colorhunt.co/palette/371b584c35755b4b8a7858a6
