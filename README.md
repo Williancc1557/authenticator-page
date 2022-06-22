@@ -4,7 +4,7 @@
 
 # Sistema de autenticação
 
-<img src="assets/apresentation.gif" />
+<img src="assets/apresentation.gif" style="border-radius: 10px"/>
 
 *Authenticator systems for your application*
 
@@ -16,7 +16,7 @@
 ```ts
 {
     author: "Willian cavalcanti Coelho",
-    about: "Website com o objetivo de associar com um backend de authenticação."
+    about: "Website com o objetivo de associar com um backend de authenticação.",
     framework: "angular",
     backend: "nestjs",
 }
@@ -40,26 +40,35 @@ Primeiramente, achei mais confortável criar primeiro o backend cujo o link est�
 
 Comecei assim criando a **página de login** em que o resultado foi melhor do que eu esperava:
 
-<img src="assets/print-login-page.png"  />
+<div align="center">
+    <img src="assets/print-login-page.png" width="600px" style="border-radius:10px" />
+</div>
 
 Essa página é um componente localizado na origem `src/app/page/auth/sign-in`, nessa página possui o container da esquerda que é de um titulo animado, e o da direita que são os campos para serem preenchidos.
 
 A página é composta com tratamento de erros, apresentando todos os erros em formato de card no canto superior da tela, por exemplo:
 
-<img src="assets/print-error-card.png">
+<div align="center">
+    <img src="assets/print-error-card.png" width="600px" style="border-radius:10px">
+</div>
 
 Para aplicar esse card utilizei um módulo do angular chamado de `MatSnackBarModule`, criei duas funções para utilizar esse módulo, essas funções tem origem no `src/app/service/utils.service.ts`. Entretanto, tem uma função `showSnackBarSucess()` para caso seja um card positivo, ou seja, algo deu certo e uma função `showSnackBarError()` para algo falho. Para entender mais detalhadamente, observe o código <a href="https://github.com/Williancc1557/authenticator-page/blob/master/src/app/service/utils.service.ts">clicando aqui<a>, tentei deixar o mais claro possível.
 
 Ao chamar a função **showSnackBarSucess()**, esse é o resultado:
 
-<img src="assets/print-sucess-card.png" />
+<div align="center">
+    <img src="assets/print-sucess-card.png" width="600px" style="border-radius:10px" />
+</div>
 
 Nesse caso utilizei o parâmetro "Logado com sucesso".
 
 Também, fiz com que toda vez que a api for se comunicar com a **API** ela apresente uma tela de login que é um componente reutilizável, localizado na origem `src/components/utils/load`.
 
 **Resultado:**
-<img src="assets/login-acess.gif">
+
+<div align="center">
+    <img src="assets/login-acess.gif" style="border-radius:10px">
+</div>
 
 ### Página de cadastro
 
@@ -67,13 +76,17 @@ A página de cadastro é totalmente baseada na de login, utilizando o mesmo comp
 
 Também utiliza os cards de erro e de sucesso, e também o de carregamento.
 
-<img src="assets/sign-up.gif"/>
+<div align="center">
+    <img src="assets/sign-up.gif" style="border-radius:10px"/>
+</div>
 
 ### Tela de confirmação de email
 
 Como vamos ter certeza de que o email colocado para criar a conta, é realmente do usuário? Para isso fiz um sistema onde ele envia um código para o email que você utilizou para a criação da conta, ou seja, o usuário não vai ter acesso as páginas da aplicação sem antes ter verificado o seu email.
 
-<img src="assets/print-verify-email.png" />
+<div align="center">
+    <img src="assets/print-verify-email.png" width="600px" style="border-radius:10px" />
+</div>
 
 Coloque o código de 4 dígitos no bloco de texto e automaticamente ele vai validar seu código e liberar o seu email.
 
@@ -86,5 +99,5 @@ Coloque o código de 4 dígitos no bloco de texto e automaticamente ele vai vali
     <p>
         Obrigado por ler minha doc, irei fazer mais projetos logo logo
     </p>
-    <img src="assets/thanks.gif" height="300px">
+    <img src="assets/thanks.gif" height="300px" style="border-radius:10px">
 </div>
